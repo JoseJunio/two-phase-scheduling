@@ -17,6 +17,7 @@ public class Parameters {
 	private int numIteration;
 	private int populacaoSize;
 	private int tipoGeracao;
+	private int tipoOperadorCrossover;
 
 	public Parameters(String path) {
 
@@ -63,6 +64,9 @@ public class Parameters {
 					case 6:
 						tipoGeracao = Integer.parseInt(m.group(1));
 						break;
+					case 7:
+						tipoOperadorCrossover = Integer.parseInt(m.group(1));
+						break;
 					}
 					count++;
 				}
@@ -101,5 +105,9 @@ public class Parameters {
 	public int getTipoGeracao() {
 		return tipoGeracao;
 	}
+
+	public int getTipoOperadorCrossover() {
+		return tipoOperadorCrossover;
+	}	
 
 }

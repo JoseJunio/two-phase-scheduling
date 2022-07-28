@@ -1,11 +1,3 @@
-/.DS_Store
-/LocalSearch/
-/Log/
 /Parameters/
-/SimulateAG/
-/SimulateEngine/
-/Task/
-/Utils/
-/main/
-/ETC/
 /Heuristics/
+/LocalSearch/

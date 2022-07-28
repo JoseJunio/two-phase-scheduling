@@ -129,14 +129,16 @@ public class Main {
 					} while ((x / (double) y) < 0.50);
 
 					if (i == 0) {
-						popB[a] = crossover.crossover_uniform_unique(tasks, popA[x], popA[y], c);
+						//popB[a] = crossover.crossover_uniform_unique(tasks, popA[x], popA[y], c);
+						popB[a] = crossover.apply(parameters.getTipoOperadorCrossover(), tasks, popA[x], popA[y], c);
 
 						if (popB[a] == null) {
 							continue;
 						}
 
 					} else if (i == 1) {
-						popA[a] = crossover.crossover_uniform_unique(tasks, popB[x], popB[y], c);
+						//popA[a] = crossover.crossover_uniform_unique(tasks, popB[x], popB[y], c);
+						popA[a] = crossover.apply(parameters.getTipoOperadorCrossover(), tasks, popB[x], popB[y], c);
 
 						if (popA[a] == null) {
 							continue;
