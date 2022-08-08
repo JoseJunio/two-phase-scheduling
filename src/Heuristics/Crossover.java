@@ -55,6 +55,11 @@ public class Crossover {
 		
 		double average = (l1.makespan + l2.makespan) / 2.0;
 		
+
+		for (int a = 0; a < start; a++){
+		   l.mapping[a] = l1.mapping[a];
+		}
+		
 		for (int a = start; a < tasks; a++){
 		   l.mapping[a] = l2.mapping[a];
 		}
@@ -76,14 +81,22 @@ public class Crossover {
 	public Solution crossover_two_point(int tasks, Solution l1, Solution l2, double c) {
 		Solution l = new Solution(l1.etc);
 		
-		int start = LSUtils.randInt(0, tasks);
+		int start = LSUtils.randInt(0, tasks/2);
 		
-		int end = LSUtils.randInt(start+1, tasks);
+		int end = LSUtils.randInt((tasks/2)+1, tasks);
 		
 		double average = (l1.makespan + l2.makespan) / 2.0;
 		
+		for (int a = 0; a < start; a++){
+		   l.mapping[a] = l1.mapping[a];
+		}
+		
 		for (int a = start; a < end; a++){
 		   l.mapping[a] = l2.mapping[a];
+		}
+		
+		for (int a = end; a < tasks; a++){
+		   l.mapping[a] = l1.mapping[a];
 		}
 		
 		l.load();

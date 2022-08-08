@@ -203,7 +203,7 @@ public class Main {
 				}
 			}
 
-			for (int i = 0; i < popSize / 5; i++) {
+			for (int i = 0; i < popSize; i++) {
 
 				// Buscar 20% da populacao
 				// for (int i = 0; i < popSize/3; i++) {
