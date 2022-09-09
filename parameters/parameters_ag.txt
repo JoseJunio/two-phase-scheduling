@@ -1,8 +1,8 @@
 NUM_MACHINES = 16
 NUM_TASKS = 512
-file = hscp_instances/512x16/u_c_hihi.txt
-filePaulo = instances_paulo/new-512x16/lbm-u_c_hihi.txt
+file = hscp_instances/512x16/u_i_lolo.txt
+filePaulo = instances_paulo/new-512x16/lbm-u_i_lolo.txt
 numIteration = 1000
-populacaoSize = 150
+populacaoSize = 200
 tipoGeracao = 2
-tipoOperadorCrossover = 3
+tipoOperadorCrossover = 4

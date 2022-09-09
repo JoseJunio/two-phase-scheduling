@@ -112,6 +112,31 @@ public class Crossover {
 		
 	}
 	
+	// Tipo 4
+	public Solution crossover_average(int tasks, Solution l1, Solution l2, double c) {
+		Solution l = new Solution(l1.etc);
+		
+		
+		double average = (l1.makespan + l2.makespan) / 2.0;
+		
+		for (int a = 0; a < tasks; a++){
+			int averageDiff = (l1.mapping[a] + l2.mapping[a]) / 2;
+			l.mapping[a] = averageDiff;
+		}
+		
+		l.load();
+		l.makespan();
+		
+		double rand = LSUtils.randDouble(0.0, 1.0);
+		
+		if(l.makespan > average || rand < Math.exp((l.makespan - average)/c)) {
+			return l;
+		}
+		
+		return null;
+		
+	}
+	
 	public Solution apply(int tipo, int tasks, Solution l1, Solution l2, double c) {
 		if(Integer.valueOf(1).equals(tipo)) {
 			return crossover_uniform_unique(tasks, l1, l2, c);
@@ -119,6 +144,8 @@ public class Crossover {
 			return crossover_one_point(tasks, l1, l2, c);
 		} else if(Integer.valueOf(3).equals(tipo)) {
 			return crossover_two_point(tasks, l1, l2, c);
+		} else if(Integer.valueOf(4).equals(tipo)) {
+			return crossover_average(tasks, l1, l2, c);
 		}
 		
 		return null;
